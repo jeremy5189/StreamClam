@@ -1,6 +1,19 @@
 # StreamClam
 
-## Stream Procedure
+## Install
 
-1. Make a video with a image and audio, you can force the length with `-t` or use `-shortest` to make the video length identical to the audio length
-2. Use `-vf` to overlay text onto the video, append text to send.cmd to change text dynamically.3. Stream the overlayed video
+1. Install ffmpeg
+
+## Usage
+
+### Make a video out of photo
+
+	./make-video-from-image.sh [length-in-sec]
+
+### Stream a video to Facebook
+
+	./stream-video-with-text.sh [rtmp]
+	
+### Change video overlay text
+
+	./append-cmd.sh [time-in-video] [content]
