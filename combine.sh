@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# Length t = 60
 ffmpeg -re \
-	-thread_queue_size 1024 \
-	-framerate 30 \
+	-threads 4 \
+	-thread_queue_size 128 \
+	-framerate 1/5 \
 	-t "$1" \
 	-loop 1 \
 	-i test/img-%03d.png \
 	-i test-audio.wav \
-	-pix_fmt yuv420p \
+	-vf "fps=25,format=yuv420p" \
 	-c:v h264 \
 	-c:a aac \
 	-strict -2 \
